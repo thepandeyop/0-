@@ -1,7 +1,8 @@
 import React from 'react';
 import '../../styles/Hero.css';
 import logomain from '../images/mainblack.gif';
-const Hero = () => {
+import lightImg from '../images/mainwhite.gif';
+const Hero = ({theme}) => {
   return <section className='hero__section'>
     <div className='container'>
   <div className='hero__wrapper'>
@@ -24,7 +25,7 @@ const Hero = () => {
 </div>
 
     <div className='hero__img'></div>
-    <img src={logomain} alt=''/>
+    <img src={theme==='light-theme'? lightImg:logomain} alt=''/>
   </div>
     </div>
   </section>

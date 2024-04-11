@@ -1,0 +1,30 @@
+.field-selection {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.field-dropdown select {
+    padding: 8px;
+    font-size: 16px;
+}
+
+.field-dropdown select:focus {
+    outline: none;
+}
+
+.field-dropdown {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.field-selection h2 {
+    margin-bottom: 10px;
+}
+
+.field-selection p {
+    margin-top: 10px;
+    font-weight: bold;
+}

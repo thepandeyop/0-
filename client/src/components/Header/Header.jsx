@@ -1,66 +1,69 @@
-import React from 'react'
-import './Header.css'
+import React from 'react';
+import './Header.css';
 
-
-const nav__links = [
+const navLinks = [
     {
-        path:'#home',
-        display:'Home'
-    },
-
-    {
-        path:'#about',
-        display:'About'
+        path: '#home',
+        display: 'Home'
     },
     {
-        path:'#community',
-        display:'Community'
+        path: '#about',
+        display: 'About'
     },
     {
-        path:'#group',
-        display:'Group'
+        path: '#community',
+        display: 'Community'
     },
     {
-        path:'#Roadmap',
-        display:'Roadmap'
+        path: '#group',
+        display: 'Group'
     },
+    {
+        path: '#Roadmap',
+        display: 'Roadmap'
+    }
+];
 
-]
-const Header = () => {
-  return (
-    <header className="header">
-    <div className='container'>
-       <div className='nav__wrapper'>
-             <div className='logo'>
-                <h2>Zero Factorial</h2>
-             </div>
+const Header = ({ theme, toggleTheme }) => {
+    return (
+        <header className={`header ${theme}`}>
+            <div className='container'>
+                <div className='nav__wrapper'>
+                    <div className='logo'>
+                        <h2>Zero Factorial</h2>
+                    </div>
 
-             {/* navigation */}
-             <div className='navigation'>
-                <ul className='menu'>
-                     {
-                        nav__links.map( (item,index)=>(
-                            <li className='menu__item'>
-                                <a href={item.path} className='menu__link'>
-                                    {item.display}
-                                </a>
-                            </li>))
-                     }          
-                </ul>
-             </div>
-             {/*              lightmode */}
-            <div className='light__mode'>
-                <span > <i class="ri-sun-line"> </i>
-                 Light Mode
-                </span>
-            </div> 
-       </div>
+                    {/* navigation */}
+                    <div className='navigation'>
+                        <ul className='menu'>
+                            {navLinks.map((item, index) => (
+                                <li key={index} className='menu__item'>
+                                    <a href={item.path} className='menu__link'>
+                                        {item.display}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
 
-    </div>
+                    {/* Light/Dark mode toggle */}
+                    <div className='light__mode'>
+                        <span onClick={toggleTheme}>
+                            {theme === 'light-theme' ? (
+                                <>
+                                    <i className='ri-moon-line'></i> <span className="light-text">Light</span>
+                                </>
+                            ) : (
+                                <>
+                                    <i className='ri-sun-line'></i> <span className="dark-text">Dark</span>
+                                </>
+                            )}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </header>
+    );
+};
 
-    </header>
-
-  )
-}
-
-export default Header
+export default Header;
